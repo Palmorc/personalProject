@@ -8,35 +8,41 @@ componentDidMount(){
   this.props.getCart()
 }
 
+
+
 totaling = () => {
+  if(this.props.cart.length = 0){
+    return 'Your cart is empty'
+  } else {
   let total = 0
   this.props.cart.forEach(function(item){
       let itemTotal = item.price*item.quantity
       total += itemTotal
   })
   total = Math.floor(total * 100) / 100
-  return total
-}
+}}
 
 render(){
   console.log(this.props.cart)
 
   return(
     <div>
-      {this.props.cart
+      {this.props.cart != []
         ?
       this.props.cart.map(item => {
         return(
           <div key={item.id}>
             <h1>{item.name}</h1>
-            <p>{item.price}</p>
-            <button onClick={()=>this.props.removeItem()}>Remove</button>
+            <img src={item.image_url}  style={{width:'50px',height:'50px'}}/>
+            <p>${item.price}</p>
+            <p>Quantity: {item.quantity}</p>
+            <button onClick={()=>this.props.removeItem(item)}>Remove</button>
           </div>
         )
       })
       :
       null}
-      <div>Total:{this.totaling()} </div>
+      <div>{this.totaling()} </div>
     </div>
   )
 }

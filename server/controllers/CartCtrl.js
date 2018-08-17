@@ -13,9 +13,18 @@ module.exports = {
     res.send(req.session.cart)
   },
   removeItem: (req, res) => {
-    req.session.cart.splice(1,1)
+    let item=req.body
+    if (!req.session.cart){
+      res.send('Your cart is empty')
+    } else {
+      req.session.cart.splice(item.id,1)
+      res.send(req.session.cart)
+    }
   },
   updateItem: (req, res) => {
-
+    let item = req.body
+    function add(){item.quantity+=1}
+    function remove(){item.quantity-=1}
+    return item.quantity
   }
 }

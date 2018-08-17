@@ -16,13 +16,21 @@ class Navbar extends Component{
 
   }
 
+  cartCounter = () => {
+    if(this.props.cart.length===0){
+      return 'Empty'
+    } else {
+      return '+' + this.props.cart.length
+    }
+  }
+
   render(){
     return(
       <div className='navbar'>
         <Link to='/'><img src = 'http://www.ccorpusa.com/wp-content/uploads/2017/07/logo.png'  style={{width:'100px',height:'100px'}}/></Link>
         <div className ='buttons' >
           <button onClick={this.login} className='loginButton'>Login</button>
-          <Link to='/cart'><button className='cartButton'>Cart</button></Link>
+          <Link to='/cart'><button className='cartButton'>Cart</button></Link><p>{this.cartCounter()}</p>
         </div>
       </div>
     )
@@ -31,7 +39,8 @@ class Navbar extends Component{
 
 let mapStateToProps = state => {
   return {
-    user:state.data
+    user:state.data,
+    cart: state.cart
   }
 }
 
