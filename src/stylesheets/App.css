@@ -11,6 +11,7 @@ a {
 }
 
 .navbar {
+  top: 0;
   overflow: hidden;
   z-index: 999;
   background: #3B4252;
@@ -20,7 +21,8 @@ a {
   position: fixed;
 }
 .navbar .logo {
-  margin: 15px;
+  margin: 20px;
+  margin-top: 20px;
 }
 .navbar .buttons {
   float: right;
@@ -175,13 +177,30 @@ a {
 }
 
 .cart {
+  overflow-y: scroll;
   padding-top: 120px;
   margin: 15px;
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   width: 100vw;
+}
+.cart .cartItemPrice, .cart .cartItemQuantity, .cart .total, .cart .cartItemImage {
+  display: block;
+  max-width: 50vw;
+  font-family: "Vollkorn", serif;
+  margin-left: 5px;
+}
+.cart .total {
+  display: flex;
+  margin-top: -190px;
+  position: static;
+  padding-left: 80vw;
+}
+.cart .checkoutButton {
+  margin-left: 60vw;
+  margin-top: -100px;
 }
 
 .footer {

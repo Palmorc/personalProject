@@ -1,6 +1,6 @@
 module.exports = {
   getItems: (req, res) => {
-    res.send(req.session.cart)
+    res.send(req.session.cart || [])
   },
   addItem: (req, res) => {
     let item = req.body
@@ -21,10 +21,16 @@ module.exports = {
       res.send(req.session.cart)
     }
   },
-  updateItem: (req, res) => {
+  plusItem: (req, res) => {
     let item = req.body
-    function add(){item.quantity+=1}
-    function remove(){item.quantity-=1}
-    return item.quantity
+    let id = item.id
+
+    if(id === item.id){item.quantity++}
+    res.send(item.quantity)
+  },
+  minusItem: (req,res)=>{
+    let item = req.body
+    item.quantity --
+    res.send(item.quantity)
   }
 }

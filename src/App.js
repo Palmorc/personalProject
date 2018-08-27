@@ -8,7 +8,7 @@ import SingleView from './components/SingleView'
 import Footer from './components/Footer'
 import {HashRouter, Route, Switch} from 'react-router-dom'
 import {connect} from 'react-redux'
-import {getUser} from './redux/reducers/user'
+import {getUser, getCart} from './redux/reducers/user'
 import './stylesheets/App.css';
 
 
@@ -16,6 +16,7 @@ import './stylesheets/App.css';
 class App extends Component {
   componentDidMount(){
     this.props.getUser()
+    this.props.getCart()
   }
   render() {
     return (
@@ -38,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default connect(null, {getUser})(App);
+export default connect(null, {getUser, getCart})(App);

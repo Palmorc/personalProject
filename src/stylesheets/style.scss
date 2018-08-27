@@ -4,6 +4,7 @@ $logoBlue: #88C0D0;
 $red: #BF616A;
 $green: #A3BE8C;
 $offwhite: #D8DEE9;
+$purple: #B48EAD;
 
 $fancyFont : 'Raleway', sans-serif;
 $poppins : 'Poppins', sans-serif;
@@ -18,6 +19,7 @@ a{
   text-decoration: none;
 }
 .navbar{
+  top:0;
   overflow: hidden;
   z-index: 999;
   background: $black;
@@ -27,7 +29,8 @@ a{
   position: fixed;
   // margin-top: -30px;
   .logo{
-    margin: 15px;
+    margin: 20px;
+    margin-top: 20px;
   }
   .buttons{
     float: right;
@@ -193,13 +196,31 @@ a{
   padding-top: 120px;
 }
 .cart{
+  overflow-y: scroll;
   padding-top: 120px;
   margin : 15px;
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   width: 100vw;
+  .cartItemPrice, .cartItemQuantity, .total, .cartItemImage{
+    display: block;
+    max-width: 50vw;
+    font-family: $volkorn;
+    margin-left: 5px;
+  }
+  .total{
+    display: flex;
+    margin-top:-190px;
+    position: static;
+    padding-left: 80vw;
+
+  }
+  .checkoutButton{
+    margin-left: 60vw;
+    margin-top: -100px;
+  }
 }
 
 .footer{

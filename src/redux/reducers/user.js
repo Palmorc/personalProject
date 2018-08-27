@@ -24,6 +24,13 @@ const DELETE_ITEM_FULFILLED = 'DELETE_ITEM_FULFILLED'
 const GET_CART = 'GET_CART'
 const GET_CART_FULFILLED = 'GET_CART_FULFILLED'
 
+const PLUS_ITEM = "PLUS_ITEM"
+const PLUS_ITEM_FULFILLED = "PLUS_ITEM_FULFILLED"
+
+const MINUS_ITEM = "MINUS_ITEM"
+const MINUS_ITEM_FULFILLED = "MINUS_ITEM_FULFILLED"
+
+
 
 
 
@@ -49,11 +56,14 @@ export default function reducer(state = initialState, action){
     case CREATE_ORDER_FULFILLED:
       return{...state, order: action.payload.data}
     case ADD_ITEM_FULFILLED:
-    console.log(11111111111, action)
       return{...state, cart: action.payload.data}
     case DELETE_ITEM_FULFILLED:
       return{...state, cart: action.payload.data}
     case GET_CART_FULFILLED:
+      return{...state, cart:action.payload.data}
+    case PLUS_ITEM_FULFILLED:
+      return{...state, cart:action.payload.data}
+    case MINUS_ITEM_FULFILLED:
       return{...state, cart:action.payload.data}
     default:
       return state
@@ -113,5 +123,19 @@ export function getCart(){
   return{
     type: GET_CART,
     payload: axios.get('/api/cart')
+  }
+}
+
+export function plusItem(item){
+  return{
+    type: PLUS_ITEM,
+    payload: axios.post('/api/cart', item.quantity)
+  }
+}
+
+export function minusItem(item){
+  return{
+    type: MINUS_ITEM,
+    payload: axios.post('/api/cart', item.quantity)
   }
 }
