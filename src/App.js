@@ -5,10 +5,11 @@ import Cart from './components/Cart'
 import Checkout from './components/Checkout'
 import OrderStatus from './components/OrderStatus'
 import SingleView from './components/SingleView'
+import Footer from './components/Footer'
 import {HashRouter, Route, Switch} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {getUser} from './redux/reducers/user'
-import './App.css';
+import './stylesheets/App.css';
 
 
 
@@ -21,7 +22,7 @@ class App extends Component {
       <div className="App">
       <HashRouter>
         <div>
-        <Navbar />
+        <Navbar style={{position: 'fixed'}}/>
         <Switch>
           <Route exact path = '/' component={Landing}/>
           <Route path = '/cart' component={Cart}/>
@@ -31,6 +32,7 @@ class App extends Component {
         </Switch>
         </div>
         </HashRouter>
+        <Footer/>
       </div>
     );
   }

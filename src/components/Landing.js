@@ -10,13 +10,13 @@ class Items extends Component{
 
   render(){
     return(
-      <div>
+      <div className= 'landing'>
         {this.props.items.map(items => {
           return(
-              <div key={items.id}>
-                <Link to={`/items/${items.id}`}><h1>{items.name}</h1></Link>
-                <p><b>{items.price}</b></p>
-                <img src={`${items.image_url}`} style={{width:'250px',height:'250px'}}/>
+              <div key={items.id} className = 'items'>
+                <Link to={`/items/${items.id}`}><h1 className = 'itemName'>{items.name}</h1></Link>
+                <p className = 'itemPrice'><b>${items.price}</b></p>
+                <Link to={`/items/${items.id}`}><img className = 'itemImage' src={`${items.image_url}`} style={{width:'250px',height:'250px'}}/></Link>
               </div>
           )
         })}

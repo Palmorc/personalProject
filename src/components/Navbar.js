@@ -19,18 +19,40 @@ class Navbar extends Component{
   cartCounter = () => {
     if(this.props.cart.length===0){
       return 'Empty'
-    } else {
-      return '+' + this.props.cart.length
+    }else if(this.props.cart.length===1) {
+      return 'One'
+    }else if(this.props.cart.length===2) {
+     return 'Two'
+   } else if(this.props.cart.length===3) {
+     return 'Three'
+   } else if(this.props.cart.length===4) {
+     return 'Four'
+   } else if(this.props.cart.length===5) {
+     return 'Five'
+   } else if(this.props.cart.length===6) {
+     return 'Six'
+   } else if(this.props.cart.length===7) {
+     return 'Seven'
+   } else if(this.props.cart.length===8) {
+     return 'Eight'
+   } else if(this.props.cart.length===9) {
+     return 'Nine'
+   }else {
+      return '+' + Number(this.props.cart.length)
     }
   }
 
   render(){
     return(
       <div className='navbar'>
-        <Link to='/'><img src = 'http://www.ccorpusa.com/wp-content/uploads/2017/07/logo.png'  style={{width:'100px',height:'100px'}}/></Link>
+        <Link to='/'><img src = {require('../images/logo.png')} style={{width:'75px',height:'auto'}} className='logo'/></Link>
         <div className ='buttons' >
-          <button onClick={this.login} className='loginButton'>Login</button>
-          <Link to='/cart'><button className='cartButton'>Cart</button></Link><p>{this.cartCounter()}</p>
+          <button onClick={this.login} className='loginButton'>LOGIN</button>
+          <Link to='/cart'><button className='cartButton'>CART</button></Link>
+        </div>
+        <Link to='/'><div className='name'><p ><i><b>NORD</b></i></p></div></Link>
+        <div className='cartCounter'>
+          <p className='cartnum'>{this.cartCounter()}</p>
         </div>
       </div>
     )

@@ -13,15 +13,15 @@ class SingleView extends Component{
   render(){
 
     return(
-      <div>
+      <div className='bigBoi'>
         {this.props.items.map(item => {
           return(
-            <div key={item.id}>
-              <h1>{item.name}</h1>
-              <p><b>{item.price}</b></p>
-              <img src={`${item.image_url}`} style={{width:'500px',height:'500px'}}/>
-              <button onClick={() => this.props.addItem(item)}>Add to Cart</button>
-              <p>{item.description}</p>
+            <div key={item.id} className='singleItem'>
+              <h1 className='singleItemName'>{item.name}</h1>
+              <p className='singleItemPrice'><b>${item.price}</b></p>
+              <img className='singleItemImage'src={`${item.image_url}`} style={{width:'500px',height:'500px'}}/>
+              <p className='itemDesc'>{item.description}</p>
+              <button className='addToCart' onClick={() => this.props.addItem(item)}>Add to Cart</button>
             </div>
           )
         })}

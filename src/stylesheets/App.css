@@ -1,0 +1,198 @@
+body {
+  background-color: #ECEFF4;
+}
+
+h1 {
+  font-family: "Raleway", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  overflow: hidden;
+  z-index: 999;
+  background: #3B4252;
+  display: block;
+  width: 100%;
+  height: 120px;
+  position: fixed;
+}
+.navbar .logo {
+  margin: 15px;
+}
+.navbar .buttons {
+  float: right;
+}
+.navbar .buttons .loginButton, .navbar .buttons .cartButton {
+  color: #88C0D0;
+  margin: 20px;
+  background-color: #3B4252;
+  border-style: none;
+  font-size: 24px;
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+  margin-top: 8.5%;
+  letter-spacing: 3px;
+  border-radius: 3px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.navbar .buttons .cartButton {
+  margin-right: 10px;
+}
+.navbar .buttons .loginButton:hover, .navbar .buttons .cartButton:hover {
+  color: #ECEFF4;
+}
+
+.cartCounter {
+  position: relative;
+  z-index: 1000;
+  text-align: center;
+  border-radius: 2px;
+  vertical-align: middle;
+  height: 15px;
+  width: 50px;
+  background-color: #BF616A;
+  margin-top: -80px;
+  margin-right: 41px;
+  display: block;
+  width: 3%;
+  padding: 3px;
+  float: right;
+}
+
+.cartnum {
+  color: #3B4252;
+  font-family: "Raleway", sans-serif;
+  margin-top: -3px;
+}
+
+.name {
+  display: block;
+  width: 125px;
+  height: 125px;
+  margin-left: 47%;
+  margin-top: -130px;
+  color: #ECEFF4;
+  font-family: "Poppins", sans-serif;
+  font-size: 42px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.name:hover {
+  color: #88C0D0;
+}
+
+.landing {
+  background-color: #ECEFF4;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-content: space-around;
+  padding-top: 30px;
+}
+
+.items {
+  margin: 35px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.items .itemName {
+  font-family: "Raleway", sans-serif;
+  color: black;
+  text-decoration: none;
+}
+.items .itemPrice {
+  font-family: "Vollkorn", serif;
+}
+.items .itemImage {
+  box-shadow: 2px 2px 15px #3B4252;
+}
+
+.singleItem {
+  background-color: #ECEFF4;
+  display: block;
+  height: 850px;
+  width: 100%;
+  margin-bottom: -45px;
+}
+.singleItem .singleItemImage {
+  height: 500px;
+  width: 500px;
+  box-shadow: 2px 2px 15px #88C0D0;
+  margin: 20px;
+  margin-top: -90px;
+  margin-left: 45px;
+}
+.singleItem .singleItemName, .singleItem .singleItemPrice, .singleItem .itemDesc {
+  padding-left: 40vw;
+}
+.singleItem .singleItemName {
+  font-size: 42;
+  font-family: "Raleway", sans-serif;
+  padding-top: 20px;
+}
+.singleItem .singleItemPrice {
+  font-family: "Vollkorn", serif;
+}
+.singleItem .itemDesc {
+  display: block;
+  width: 800px;
+  margin-top: -400px;
+  word-wrap: break-word;
+}
+.singleItem .addToCart {
+  position: relative;
+  z-index: 10;
+  display: block;
+  width: 150px;
+  height: 75px;
+  margin-left: 1400px;
+  border-radius: 2px;
+  margin-top: -180px;
+  color: #ECEFF4;
+  opacity: 0.6;
+  background-color: #A3BE8C;
+  border-style: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.addToCart:hover {
+  opacity: 1.0;
+}
+
+.bigBoi {
+  padding-top: 120px;
+}
+
+.cart {
+  padding-top: 120px;
+  margin: 15px;
+  min-height: 70vh;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.footer {
+  position: static;
+  display: block;
+  width: 100%;
+  background-color: #3B4252;
+  height: 200px;
+  color: #D8DEE9;
+  font-family: "Raleway", sans-serif;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=App.css.map */

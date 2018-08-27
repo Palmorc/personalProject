@@ -11,37 +11,39 @@ componentDidMount(){
 
 
 totaling = () => {
-  if(this.props.cart.length = 0){
-    return 'Your cart is empty'
-  } else {
   let total = 0
   this.props.cart.forEach(function(item){
       let itemTotal = item.price*item.quantity
       total += itemTotal
   })
   total = Math.floor(total * 100) / 100
-}}
+  if (total != 0){
+    return total
+  } else {
+    null
+  }
+}
 
 render(){
   console.log(this.props.cart)
 
   return(
-    <div>
-      {this.props.cart != []
+    <div className = 'cart'>
+      {this.props.cart.length != 0
         ?
       this.props.cart.map(item => {
         return(
-          <div key={item.id}>
-            <h1>{item.name}</h1>
-            <img src={item.image_url}  style={{width:'50px',height:'50px'}}/>
-            <p>${item.price}</p>
-            <p>Quantity: {item.quantity}</p>
-            <button onClick={()=>this.props.removeItem(item)}>Remove</button>
+          <div key={item.id} className = 'cartItem'>
+            <h1 className = 'cartItemName'>{item.name}</h1>
+            <img className = 'cartItemImage' src={item.image_url}  style={{width:'50px',height:'50px'}}/>
+            <p className = 'cartItemPrice'>${item.price}</p>
+            <p className = 'cartItemQuantity'>Quantity: {item.quantity}</p>
+            <button className = 'cartRemoveItem' onClick={()=>this.props.removeItem(item)}>Remove</button>
           </div>
         )
       })
       :
-      null}
+      <h1>Your Cart is Empty</h1>}
       <div>{this.totaling()} </div>
     </div>
   )
