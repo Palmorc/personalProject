@@ -19,7 +19,7 @@ class SingleView extends Component{
             <div key={item.id} className='singleItem'>
               <h1 className='singleItemName'>{item.name}</h1>
               <p className='singleItemPrice'><b>${item.price}</b></p>
-              <img className='singleItemImage'src={`${item.image_url}`} style={{width:'500px',height:'500px'}}/>
+              <img className='singleItemImage'src={`${item.image_url}`} />
               <p className='itemDesc'>{item.description}</p>
               <button className='addToCart' onClick={() => this.props.addItem(item)}>Add to Cart</button>
             </div>

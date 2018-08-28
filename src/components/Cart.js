@@ -40,12 +40,14 @@ render(){
             <button className = 'plusQuantity' onClick={() => this.props.plusItem(item)}>+</button>
             <button className = 'subtractQuantity' onClick={() => this.props.minusItem(item)}>-</button>
             <button className = 'cartRemoveItem' onClick={()=>this.props.removeItem(item)}>Remove</button>
+
           </div>
         )
       })
       :
       <h1>Your Cart is Empty</h1>}
       <div className='total'>{this.totaling()} </div>
+      <button className='checkoutButton'>Checkout</button>
     </div>
   )
 }

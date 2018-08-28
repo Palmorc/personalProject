@@ -57,7 +57,7 @@ class Navbar extends Component{
   render(){
     return(
       <div className='navbar'>
-        <Link to='/'><img src = {require('../images/logo.png')} style={{width:'75px',height:'auto'}} className='logo'/></Link>
+        <Link to='/'><img src = {require('../images/logo.png')}  className='logo'/></Link>
         <div className ='buttons' >
           <button onClick={this.login} className='loginButton'>{this.checkLogin(this.props.user)}</button>
           <Link to='/cart'><button className='cartButton'>CART</button></Link>

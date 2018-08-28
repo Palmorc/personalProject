@@ -1,5 +1,8 @@
 body {
   background-color: #ECEFF4;
+  max-width: 100%;
+  max-height: 100%;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -21,6 +24,8 @@ a {
   position: fixed;
 }
 .navbar .logo {
+  width: 75px;
+  height: auto;
   margin: 20px;
   margin-top: 20px;
 }
@@ -178,29 +183,50 @@ a {
 
 .cart {
   overflow-y: scroll;
-  padding-top: 120px;
-  margin: 15px;
-  min-height: 60vh;
+  padding-top: 90px;
+  min-height: 80vh;
+  margin-top: 20px;
+  margin: 50px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   width: 100vw;
 }
-.cart .cartItemPrice, .cart .cartItemQuantity, .cart .total, .cart .cartItemImage {
+.cart .cartItemPrice, .cart .cartItemQuantity, .cart .cartItemImage {
   display: block;
-  max-width: 50vw;
   font-family: "Vollkorn", serif;
   margin-left: 5px;
 }
-.cart .total {
-  display: flex;
-  margin-top: -190px;
-  position: static;
-  padding-left: 80vw;
+.cart .total, .cart .checkoutButton {
+  padding-right: 20px;
+  position: fixed;
+  top: 200px;
+  align-self: flex-end;
+  font-family: "Vollkorn", serif;
+  display: block;
+  width: 150px;
+  height: 100px;
+  font-size: 20px;
 }
 .cart .checkoutButton {
-  margin-left: 60vw;
-  margin-top: -100px;
+  padding-right: 144px;
+  font-family: "Raleway", sans-serif;
+  top: 250px;
+  display: block;
+  width: 125px;
+  height: 75px;
+  color: #ECEFF4;
+  opacity: 0.6;
+  background-color: #A3BE8C;
+  border-style: none;
+  font-family: "Raleway", sans-serif;
+  font-size: 20px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+.checkout:hover {
+  opacity: 1.0;
 }
 
 .footer {
@@ -212,6 +238,35 @@ a {
   color: #D8DEE9;
   font-family: "Raleway", sans-serif;
   padding: 20px;
+}
+
+@media only screen and (max-width: 415px) {
+  body {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+  }
+
+  .name, .cartCounter {
+    display: none;
+  }
+
+  .navbar {
+    position: static;
+    height: 60px;
+    width: 100%;
+    display: flex;
+  }
+  .navbar .logo {
+    margin: 10px;
+    width: 40px;
+    height: auto;
+  }
+  .navbar .loginButton, .navbar .cartButton {
+    margin: 10px;
+    font-size: 18px !important;
+    letter-spacing: normal;
+  }
 }
 
 /*# sourceMappingURL=App.css.map */
