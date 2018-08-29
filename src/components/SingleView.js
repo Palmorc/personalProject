@@ -17,11 +17,14 @@ class SingleView extends Component{
         {this.props.items.map(item => {
           return(
             <div key={item.id} className='singleItem'>
-              <h1 className='singleItemName'>{item.name}</h1>
+            <div className='singleItemNameDiv'>
+              <h1>{item.name}</h1>
               <p className='singleItemPrice'><b>${item.price}</b></p>
-              <img className='singleItemImage'src={`${item.image_url}`} />
               <p className='itemDesc'>{item.description}</p>
               <button className='addToCart' onClick={() => this.props.addItem(item)}>Add to Cart</button>
+             </div>
+             <img className='singleItemImage'src={`${item.image_url}`} />
+
             </div>
           )
         })}

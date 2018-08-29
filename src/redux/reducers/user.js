@@ -36,6 +36,8 @@ const MINUS_ITEM_FULFILLED = "MINUS_ITEM_FULFILLED"
 
 
 
+
+
 let initialState = {
   userData: null,
   items:[],
@@ -112,10 +114,10 @@ export function addItem(item){
   }
 }
 
-export function removeItem(item){
+export function removeItem(id){
   return{
     type: DELETE_ITEM,
-    payload: axios.delete('/api/cart', item)
+    payload: axios.delete(`/api/cart/${id}`)
   }
 }
 
@@ -129,13 +131,13 @@ export function getCart(){
 export function plusItem(item){
   return{
     type: PLUS_ITEM,
-    payload: axios.post('/api/cart', item.quantity)
+    payload: axios.put('/api/cart/add', item)
   }
 }
 
 export function minusItem(item){
   return{
     type: MINUS_ITEM,
-    payload: axios.post('/api/cart', item.quantity)
+    payload: axios.put('/api/cart/remove', item)
   }
 }

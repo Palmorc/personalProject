@@ -23,30 +23,8 @@ class Navbar extends Component{
 
 
   cartCounter = () => {
-    if(this.props.cart.length===0){
-      return 'Empty'
-    }else if(this.props.cart.length===1) {
-      return 'One'
-    }else if(this.props.cart.length===2) {
-     return 'Two'
-   } else if(this.props.cart.length===3) {
-     return 'Three'
-   } else if(this.props.cart.length===4) {
-     return 'Four'
-   } else if(this.props.cart.length===5) {
-     return 'Five'
-   } else if(this.props.cart.length===6) {
-     return 'Six'
-   } else if(this.props.cart.length===7) {
-     return 'Seven'
-   } else if(this.props.cart.length===8) {
-     return 'Eight'
-   } else if(this.props.cart.length===9) {
-     return 'Nine'
-   }else {
       return '+' + Number(this.props.cart.length)
     }
-  }
 
   checkLogin = (props) => {
     return(this.props.user ? 'LOGOUT' : 'LOGIN')

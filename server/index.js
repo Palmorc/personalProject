@@ -30,7 +30,7 @@ app.use(session({
 
 app.get('/auth/callback', ac.auth)
 app.get('/api/currentuser', (req,res) => {
-  console.log(req.session);
+  // console.log(req.session);
   res.send(req.session.user)
 })
 app.get('/api/logout', (req,res)=>{
@@ -42,9 +42,9 @@ app.get('/api/items', sc.getItems)
 app.get('/api/items/:id', sc.getOne)
 app.get('/api/cart', cc.getItems)
 app.post('/api/cart', cc.addItem )
-app.delete('/api/cart', cc.removeItem)
-app.post('/api/cart', cc.plusItem)
-app.post('/api/cart', cc.minusItem)
+app.delete('/api/cart/:id', cc.removeItem)
+app.put('/api/cart/add', cc.plusItem)
+app.put('/api/cart/remove', cc.minusItem)
 
 
 app.listen(port, ()=>{

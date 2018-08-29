@@ -39,7 +39,7 @@ render(){
             <p className = 'cartItemPrice'>${item.price}</p>
             <button className = 'plusQuantity' onClick={() => this.props.plusItem(item)}>+</button>
             <button className = 'subtractQuantity' onClick={() => this.props.minusItem(item)}>-</button>
-            <button className = 'cartRemoveItem' onClick={()=>this.props.removeItem(item)}>Remove</button>
+            <button className = 'cartRemoveItem' onClick={()=>this.props.removeItem(item.id)}>Remove</button>
 
           </div>
         )
