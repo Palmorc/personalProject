@@ -330,7 +330,7 @@ a{
     margin-left: 45px;
   }
   .bigBoi{
-    margin-top: -180px;;
+    margin-top: -120px;;
     .singleItem{
       display: flex;
       flex-direction: column;
@@ -416,7 +416,7 @@ a{
     }
   }
 }
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 420px){
   body{
     max-width: 100%;
     overflow-x: hidden;
@@ -426,7 +426,7 @@ a{
   // IMPORTANT IS BAD BUT I DONT KNOW HOW ELSE TO FIX THIS
    margin: 7px !important;
    margin-top:1px !important;
-   margin-left:90px !important;
+   margin-left:60px !important;
    margin-right: 0px !important;
    font-size: 18px !important;
    letter-spacing: normal;

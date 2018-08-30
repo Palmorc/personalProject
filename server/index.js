@@ -25,6 +25,7 @@ app.use(session({
   saveUninitialized: false,
   resave: false
 }))
+app.use( express.static( `${__dirname}/../build` ) );
 
 
 
