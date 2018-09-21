@@ -150,7 +150,7 @@ a {
 .singleItem .itemDesc {
   font-family: "Vollkorn", serif;
   display: block;
-  width: 600px;
+  width: 400px;
   word-wrap: break-word;
 }
 .singleItem .addToCart {
@@ -395,5 +395,7 @@ a {
     margin-left: 10px !important;
   }
 }
+
+
 
 /*# sourceMappingURL=App.css.map */
