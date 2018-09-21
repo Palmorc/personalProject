@@ -1,18 +1,18 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import { createOrder, addItem, getCart, removeItem, plusItem, minusItem } from '../redux/reducers/user'
+import { createOrder, addItem, getCart, removeItem, plusItem, minusItem, getUser } from '../redux/reducers/user'
 
 class Cart extends Component{
 
 componentDidMount(){
   this.props.getCart()
+  this.props.getUser()
 }
 
 
 
 totaling = () => {
   let total = 0
-  console.log(2222222222, this.props.cart)
   this.props.cart.forEach(function(item){
       let itemTotal = item.price*item.quantity
       total += itemTotal
@@ -40,14 +40,13 @@ render(){
             <button className = 'plusQuantity' onClick={() => this.props.plusItem(item)}>+</button>
             <button className = 'subtractQuantity' onClick={() => this.props.minusItem(item)}>-</button>
             <button className = 'cartRemoveItem' onClick={()=>this.props.removeItem(item.id)}>Remove</button>
-
           </div>
         )
       })
       :
       <h1>Your Cart is Empty</h1>}
       <div className='total'>{this.totaling()} </div>
-      <button className='checkoutButton'>Checkout</button>
+      <button className='checkoutButton' onClick={()=>this.props.createOrder()}>Checkout</button>
     </div>
   )
 }
@@ -56,7 +55,9 @@ render(){
 let mapStateToProps = (state, props) => {
 return{
   items:state.items,
-  cart: state.cart}
+  cart: state.cart,
+  user: state.userData
+  }
 }
 
-export default connect(mapStateToProps,{addItem, createOrder, getCart, removeItem, plusItem, minusItem})(Cart)
+export default connect(mapStateToProps,{addItem, createOrder, getCart, removeItem, plusItem, minusItem, getUser})(Cart)

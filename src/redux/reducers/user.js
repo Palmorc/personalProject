@@ -103,7 +103,7 @@ export function getOne(id){
 export function createOrder(user_id){
   return{
     type: CREATE_ORDER,
-    payload: axios.get('/api/cart')
+    payload: axios.post('/api/orders')
   }
 }
 

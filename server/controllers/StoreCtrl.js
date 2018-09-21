@@ -23,13 +23,22 @@ module.exports={
 
   createOrder: async (req,res) => {
     try {
+      console.log('Hello!');
       let db = req.app.get('db')
       let item = req.body
-      let order = await db.createOrder(req.params.user_id)
-      let op = await db.createOrderProduct(req.params.order_id, req.params.product_id,item.quantity, item.price*item.quantity )
-      res.send(order, op)
-    } catch (e) {
 
+      // TODO this is only for development.  Remove for production
+      if (!req.session.user) {
+        req.session.user = {id:1}
+      }
+
+      let order = await db.createOrder(req.session.user.id)
+      console.log(req.session.user.id);
+      let op = await db.createOrderProduct(req.params.order_id, req.params.product_id,item.quantity, item.price*item.quantity )
+      res.send(order)
+    } catch (e) {
+      console.log('Error creating order:',e);
+      res.status(500).send(e)
     }
   }
 

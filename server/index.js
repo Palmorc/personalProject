@@ -4,6 +4,7 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const massive = require('massive')
 const path = require('path')
+const stripe = require('stripe')('sk_test_0sNiZlg9EKenyZ2XVmAJ7VSl')
 require('dotenv').config()
 
 const app = express()
@@ -46,6 +47,7 @@ app.post('/api/cart', cc.addItem )
 app.delete('/api/cart/:id', cc.removeItem)
 app.put('/api/cart/add', cc.plusItem)
 app.put('/api/cart/remove', cc.minusItem)
+app.post('/api/orders', sc.createOrder)
 
 
 app.listen(port, ()=>{
